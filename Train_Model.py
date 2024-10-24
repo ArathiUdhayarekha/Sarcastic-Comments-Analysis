@@ -43,7 +43,7 @@ def evaluate_model(model, X_test, y_test, tokenizer):
 if __name__ == "__main__":
     # Example usage
     from data_preparation import prepare_data
-    X_train, X_test, y_train, y_test = prepare_data('sarcastic_comments.csv')
+    X_train, X_test, y_train, y_test = prepare_data('datasets.csv')
     model, tokenizer = load_model()
     model = train_model(X_train, y_train, model, tokenizer)
     evaluate_model(model, X_test, y_test, tokenizer)
