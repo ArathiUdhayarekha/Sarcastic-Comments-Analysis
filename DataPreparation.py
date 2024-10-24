@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-def load_data(file_path='/mnt/data/english_task_a (1).csv'):
+def load_data(file_path='/mnt/data/datasets.csv'):
     # Load the dataset
     data = pd.read_csv(file_path)
     return data
@@ -12,7 +12,7 @@ def preprocess_text(text):
     text = ''.join([char for char in text if char.isalnum() or char.isspace()])
     return text
 
-def prepare_data(file_path='/mnt/data/english_task_a (2).csv'):
+def prepare_data(file_path='/mnt/data/datasets.csv'):
     # Load and preprocess data
     data = load_data(file_path)
     data['text'] = data['text'].apply(preprocess_text)
