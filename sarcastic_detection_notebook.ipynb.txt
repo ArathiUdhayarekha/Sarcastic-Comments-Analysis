@@ -1,0 +1,20 @@
+# Import necessary libraries
+from data_preparation import prepare_data
+from train_model import load_model, train_model, evaluate_model
+from interpretation import explain_predictions
+
+# Step 1: Prepare Data
+X_train, X_test, y_train, y_test = prepare_data('sarcastic_comments.csv')
+
+# Step 2: Load BERT Model and Tokenizer
+model, tokenizer = load_model()
+
+# Step 3: Train the Model
+trained_model = train_model(X_train, y_train, model, tokenizer)
+
+# Step 4: Evaluate the Model
+evaluate_model(trained_model, X_test, y_test, tokenizer)
+
+# Step 5: Interpret Model Predictions with SHAP
+comments = ["This is exactly what I needed... not!"]
+explain_predictions(trained_model, tokenizer, comments)
