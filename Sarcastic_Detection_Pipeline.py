@@ -3,7 +3,7 @@ from train_model import load_model, train_model, evaluate_model
 
 def main():
     # Step 1: Prepare the data
-    X_train, X_test, y_train, y_test = prepare_data('sarcastic_comments.csv')
+    X_train, X_test, y_train, y_test = prepare_data('datasets.csv')
 
     # Step 2: Load BERT model and tokenizer
     model, tokenizer = load_model()
